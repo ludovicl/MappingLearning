@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#answer_form').on('submit', function(e) {
         e.preventDefault()
-        var $this = $(this)
+        var $this = $(this);
         var processing = false;
         if (!processing) {
             processing = true;
