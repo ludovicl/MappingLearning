@@ -1,7 +1,8 @@
-root = "#{Dir.getwd}"
+directory Dir.pwd
+rackup File.join(Dir.pwd, 'config.ru')
+environment 'production'
+daemonize
+pidfile File.join(Dir.pwd, 'tmp', 'production.pid')
+state_path File.join(Dir.pwd, 'tmp', 'production.state')
 threads 0,4
-activate_control_app "tcp://127.0.0.1:3000"
-bind "unix://#{root}/tmp/mappinglearning.sock"
-pidfile "#{root}/tmp/puma.pid"
-rackup "#{root}/config.ru"
-state_path "#{root}/tmp/puma.state"
+bind "unix://#{Dir.pwd}/tmp/production.sock"
